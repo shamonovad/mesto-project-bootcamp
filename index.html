@@ -11,86 +11,92 @@
 <body class="page">
     <header class="header">
         <div class="header__logo"></div>
+        <div class="header__line"></div>
     </header>
     <main>
         <section class="profile">
             <div class="profile__content">
                 <img src="./images/avatar.jpg" alt="Здесь будет ваше фото" class="profile__avatar">
                 <div class="profile__info">
-                    <h1 class="profile__name">Жак-Ив Кусто<span class="profile__edit-button"></span>
-                    </h1>
-                    <p class="profile__about">Исследователь океана</p>
+                    <div class="profile__first-line">
+                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <button type="button" aria-label="Редактировать" class="profile__edit-button"></button>
+                    </div>
+                    <p class="profile__about">Исследователь океана
+                    </p>
                 </div>
             </div>
-            <div class="profile__add-button"></div>
+            <button type="button" aria-label="Добавить" class="profile__add-button"></button>
         </section>
         <section>
             <ul class="elements">
                 <li class="elements__item">
-                    <img class="elements__image" src="./images/karacaevsk.jpg" alt="Карачаевск">
+                    <img class="elements__image" src="./images/karachaevsk.jpg" alt="Карачаевск">
                     <div class="elements__caption">
                         <h2 class="elements__text">Карачаевск</h2>
-                        <div class="elements__like-button elements__like-button_active"></div>
+                        <button aria-label="Нравится"
+                            class="elements__like-button elements__like-button_active"></button>
                     </div>
                 </li>
                 <li class="elements__item">
                     <img class="elements__image" src="./images/elbrus.jpg" alt="Эльбрус">
                     <div class="elements__caption">
                         <h2 class="elements__text">Гора Эльбрус</h2>
-                        <a href="#" class="elements__like-button"></a>
+                        <button aria-label="Нравится" class="elements__like-button"></button>
                     </div>
                 </li>
                 <li class="elements__item">
                     <img class="elements__image" src="./images/dombay.jpg" alt="Домбай">
                     <div class="elements__caption">
                         <h2 class="elements__text">Домбай</h2>
-                        <a href="#" class="elements__like-button"></a>
+                        <button aria-label="Нравится" class="elements__like-button"></button>
                     </div>
                 </li>
                 <li class="elements__item">
                     <img class="elements__image" src="./images/elbrus.jpg" alt="Эльбрус">
                     <div class="elements__caption">
                         <h2 class="elements__text">Гора Эльбрус</h2>
-                        <a href="#" class="elements__like-button"></a>
+                        <button aria-label="Нравится" class="elements__like-button"></button>
                     </div>
                 </li>
                 <li class="elements__item">
                     <img class="elements__image" src="./images/dombay.jpg" alt="Домбай">
                     <div class="elements__caption">
                         <h2 class="elements__text">Домбай</h2>
-                        <a href="#" class="elements__like-button"></a>
+                        <button aria-label="Нравится" class="elements__like-button"></button>
                     </div>
                 </li>
                 <li class="elements__item">
                     <img class="elements__image" src="./images/karachaevsk.jpg" alt="Карачаево-Черкессия">
                     <div class="elements__caption">
                         <h2 class="elements__text">Карачаево-Черкессия</h2>
-                        <a href="#" class="elements__like-button"></a>
+                        <button aria-label="Нравится" class="elements__like-button"></button>
                     </div>
                 </li>
             </ul>
         </section>
     </main>
     <footer class="footer">
-        &copy; 2020 Mesto Russia
+        <p class="footer__text">
+            &copy; 2020 Mesto Russia
+        </p>
     </footer>
-    <div class="popup popup_opened">
+    <div class="popup">
         <div class="popup__container">
-            <div>
-                <h2 class="popup__name">Редактировать профиль</h2>
-                <div class="popup__close-button"></div>
-            </div>
-            <form class="form">
-                <p class="form__field">
-                    <label for="name"></label>
-                    <input class="form__name" type="text" name="name" id="name" placeholder="Жак-Ив Кусто" required>
-                </p>
-                <p class="form__field">
-                    <label for="about"></label>
-                    <input class="form__about" type="text" name="about" id="about" placeholder="Исследователь океана"
+            <h2 class="popup__name">Редактировать профиль</h2>
+            <div class="popup__close-button"></div>
+            <form class="popup__form">
+                <fieldset class="popup__fieldset">
+                    <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Введите имя"
                         required>
-                </p>
-                <button class="form__save-button" type="submit">Сохранить</button>
+                    <div class="popup__line"></div>
+                </fieldset>
+                <fieldset class="popup__fieldset">
+                    <input class="popup__input popup__input_type_about" type="text" name="about"
+                        placeholder="Введите описание" required>
+                    <div class="popup__line"></div>
+                </fieldset>
+                <button class="popup__save-button" type="submit">Сохранить</button>
             </form>
         </div>
     </div>

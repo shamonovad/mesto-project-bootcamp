@@ -2,7 +2,7 @@
     display: none;
     /* display: flex; */
     width: 100%;
-    min-height: 720px;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -13,7 +13,7 @@
 
 .popup::before {
     content: "";
-    background-color: grey;
+    background-color: #000;
     opacity: 0.5;
     position: absolute;
     top: 0;

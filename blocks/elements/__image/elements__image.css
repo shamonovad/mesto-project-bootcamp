@@ -1,17 +1,17 @@
 .elements__image {
     display: block;
     width: 100%;
-    min-height: calc(88% - 34px);
+    height: 282px;
     object-fit: cover;
     background-color: #c4c4c4;
     
 }
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
     .elements__image {
         min-height: calc(89% - 34px);
     }
-}
+} */
 
 /* .elements__image::before {
     content: "";

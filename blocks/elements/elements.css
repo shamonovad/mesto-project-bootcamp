@@ -6,7 +6,7 @@
     list-style: none;
     display: grid;
     grid-template-columns: repeat(3, calc((100% - 34px)/3));
-    grid-auto-rows: calc(52% - 25px);
+    grid-auto-rows: calc(52% - 22px);
     column-gap: 17px;
     row-gap: 20px;
 }
@@ -18,11 +18,12 @@
     }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 650px) {
     .elements {
+        margin-top: 38px;
         width: 88%;
         max-width: 282px;
         grid-template-columns: 100%;
-        grid-auto-rows: calc(19% - 22px);
+        grid-auto-rows: calc(17% - 22px);
     }
 }

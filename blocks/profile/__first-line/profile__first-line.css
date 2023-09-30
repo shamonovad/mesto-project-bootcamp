@@ -1,0 +1,10 @@
+.profile__first-line {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__first-line {
+        justify-content: center;
+    }
+}
