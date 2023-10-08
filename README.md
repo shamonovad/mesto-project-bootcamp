@@ -16,4 +16,9 @@
 * Grid-вёрстка
 * Адаптация сайта под различные устройства  
 
+
+### 3. __JavaScript__:  
+* Введение в основы языка JavaScript  
+* Добавление новой функциональности на сайт  
+
 #### Ссылка на проект в [__GitHub__ __Pages__](https://shamonovad.github.io/mesto-project-bootcamp/).
