@@ -1,8 +1,10 @@
 .element {
+    width: 282px;
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
     max-width: 282px;
     list-style: none;
     padding: 0;
+    position: relative;
 }

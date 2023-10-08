@@ -1,0 +1,15 @@
+.popup__container_img {
+    position: relative;
+    /* background-color: #fff; */
+    border-radius: 10px;
+    z-index: 2;
+    max-width: 75vw;
+    max-height: 75vh;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+    .popup__container_img {
+        margin-top: 123px;
+    }
+}
