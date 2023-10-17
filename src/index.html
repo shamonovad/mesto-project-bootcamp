@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
     <title>Место</title>
 </head>
 
@@ -16,7 +15,7 @@
     <main>
         <section class="profile">
             <div class="profile__content">
-                <img src="./images/avatar.jpg" alt="Здесь будет ваше фото" class="profile__avatar">
+                <img src='<%=require("./images/avatar.jpg")%>' alt="Здесь будет ваше фото" class="profile__avatar">
                 <div class="profile__info">
                     <div class="profile__first-line">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -45,21 +44,37 @@
     </main>
     <footer class="footer">
         <p class="footer__text">
-            &copy; 2020 Mesto Russia
+            &copy; 2023 Mesto Russia
         </p>
     </footer>
     <div class="popup" id="edit-profile">
         <div class="popup__container">
             <h2 class="popup__name">Редактировать профиль</h2>
             <button type="button" class="popup__close-button"></button>
-            <form class="popup__form">
+            <form class="popup__form" novalidate>
                 <fieldset class="popup__fieldset">
-                    <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Введите имя"
-                        required>
+                    <input 
+                    class="popup__input popup__input_type_name" 
+                    type="text" 
+                    minlength="2" 
+                    maxlength="40" 
+                    id="username"
+                    name="name" 
+                    placeholder="Введите имя"
+                    required>
+                    <span id="error-username" class="popup__input_error-message popup__input_error-message_hidden"></span>
                 </fieldset>
                 <fieldset class="popup__fieldset">
-                    <input class="popup__input popup__input_type_about" type="text" name="about"
-                        placeholder="Введите описание" required>
+                    <input 
+                    class="popup__input popup__input_type_about" 
+                    type="text" 
+                    minlength="2" 
+                    maxlength="200" 
+                    id="about"
+                    name="about"
+                    placeholder="Введите описание" 
+                    required>
+                    <span id="error-about" class="popup__input_error-message popup__input_error-message_hidden"></span>
                 </fieldset>
                 <button class="popup__save-button" type="submit">Сохранить</button>
             </form>
@@ -69,14 +84,28 @@
         <div class="popup__container">
             <h2 class="popup__name">Новое место</h2>
             <button type="button" class="popup__close-button"></button>
-            <form class="popup__form">
+            <form class="popup__form" novalidate>
                 <fieldset class="popup__fieldset">
-                    <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Название"
-                        required>
+                    <input 
+                    class="popup__input popup__input_type_name" 
+                    type="text" 
+                    minlength="2" 
+                    maxlength="30" 
+                    id="place-name"
+                    name="name" 
+                    placeholder="Название"
+                    required>
+                    <span id="error-place-name" class="popup__input_error-message popup__input_error-message_hidden"></span>
                 </fieldset>
                 <fieldset class="popup__fieldset">
-                    <input class="popup__input popup__input_type_about popup__input_type_link" type="text" name="link"
-                        placeholder="Ссылка на картинку" required>
+                    <input 
+                    class="popup__input popup__input_type_about popup__input_type_link" 
+                    type="url" 
+                    id="place-link"
+                    name="link"
+                    placeholder="Ссылка на картинку" 
+                    required>
+                    <span id="error-place-link" class="popup__input_error-message popup__input_error-message_hidden"></span>
                 </fieldset>
                 <button class="popup__save-button" type="submit">Создать</button>
             </form>
@@ -89,7 +118,6 @@
             <h3 class="popup__img-caption"></h3>
         </div>
     </div>
-    <script src="./index.js"></script>
 </body>
 
 </html>
