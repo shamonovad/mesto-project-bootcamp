@@ -5,10 +5,10 @@
     background-color: #fff;
     width: 22px;
     height: 19px;
-    align-self: center;
+    /* align-self: center; */
     border-style: none;
     padding: 0;
-    margin-right: 20px;
+    /* margin-right: 20px; */
 }
 
 .element__like-button:hover {

@@ -2,10 +2,12 @@ const popupList = document.querySelectorAll('.popup');
 
 export function openPopup(popup) {
     popup.classList.add("popup_opened");
+    document.addEventListener('keydown', closeByEsc);
 }
 
 export function closePopup(popup) {
     popup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closeByEsc);
 }
 
 export function closeByEsc(evt) {
@@ -26,5 +28,3 @@ export function closeByOverlayClick(evt) {
 popupList.forEach((element) => {
     element.addEventListener('mousedown', closeByOverlayClick);
 });
-
-document.addEventListener('keydown', closeByEsc);

@@ -15,13 +15,16 @@
     <main>
         <section class="profile">
             <div class="profile__content">
-                <img src='<%=require("./images/avatar.jpg")%>' alt="Здесь будет ваше фото" class="profile__avatar">
+                <div class="profile__avatar_image-circle">
+                    <img alt="Здесь будет ваше фото" class="profile__avatar">
+                    <div class="profile__avatar_hover"></div>
+                </div>
                 <div class="profile__info">
                     <div class="profile__first-line">
-                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <h1 class="profile__name"></h1>
                         <button type="button" aria-label="Редактировать" class="profile__edit-button"></button>
                     </div>
-                    <p class="profile__about">Исследователь океана</p>
+                    <p class="profile__about"></p>
                 </div>
             </div>
             <button type="button" aria-label="Добавить" class="profile__add-button"></button>
@@ -30,12 +33,14 @@
             <ul class="elements">
                 <template class="card-template">
                     <li class="element">
-                        <button type="button" aria-label="Удалить" class="element__delete-button"></button>
+                        <!-- <button type="button" aria-label="Удалить" class="element__delete-button"></button> -->
                         <img class="element__img" src alt>
                         <div class="element__caption">
                             <h2 class="element__heading"></h2>
-                            <button aria-label="Нравится"
-                                class="element__like-button"></button>
+                            <div class="element__like-box">
+                                <button aria-label="Нравится" class="element__like-button"></button>
+                                <span class="element__like-number"></span>
+                            </div>
                         </div>
                     </li>
                 </template>
@@ -116,6 +121,34 @@
             <button type="button" class="popup__close-button"></button>
             <img class="popup__img" src="" alt="">
             <h3 class="popup__img-caption"></h3>
+        </div>
+    </div>
+    <div class="popup" id="edit-avatar">
+        <div class="popup__container">
+            <h2 class="popup__name">Обновить аватар</h2>
+            <button type="button" class="popup__close-button"></button>
+            <form class="popup__form" novalidate>
+                <fieldset class="popup__fieldset">
+                    <input 
+                    class="popup__input popup__input_type_name popup__input_type_link" 
+                    type="url" 
+                    id="avatar-link"
+                    name="link"
+                    placeholder="Ссылка на картинку" 
+                    required>
+                    <span id="error-avatar-link" class="popup__input_error-message popup__input_error-message_hidden"></span>
+                </fieldset>
+                <button class="popup__save-button" type="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup" id="delete">
+        <div class="popup__container">
+            <h2 class="popup__name">Вы уверены?</h2>
+            <button type="button" class="popup__close-button"></button>
+            <form class="popup__form" novalidate>
+                <button class="popup__save-button" type="submit">Да</button>
+            </form>
         </div>
     </div>
 </body>

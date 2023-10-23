@@ -37,8 +37,8 @@ function checkForm(form, buttonSubmit) {
 }
 
 function setEventListeners(form, settings) {
-    const inputElementList = form.querySelectorAll('.popup__input');
-        const buttonSubmit = form.querySelector('.popup__save-button');
+    const inputElementList = form.querySelectorAll(settings.inputSelector);
+        const buttonSubmit = form.querySelector(settings.submitButtonSelector);
         checkForm(form, buttonSubmit);
         inputElementList.forEach(inputElement => {
             inputElement.addEventListener('input', () => {
