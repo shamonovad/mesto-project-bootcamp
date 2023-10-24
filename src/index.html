@@ -33,7 +33,7 @@
             <ul class="elements">
                 <template class="card-template">
                     <li class="element">
-                        <!-- <button type="button" aria-label="Удалить" class="element__delete-button"></button> -->
+                        <button type="button" aria-label="Удалить" class="element__delete-button"></button>
                         <img class="element__img" src alt>
                         <div class="element__caption">
                             <h2 class="element__heading"></h2>
@@ -56,7 +56,7 @@
         <div class="popup__container">
             <h2 class="popup__name">Редактировать профиль</h2>
             <button type="button" class="popup__close-button"></button>
-            <form class="popup__form" novalidate>
+            <form class="popup__form" name="edit-profile" novalidate>
                 <fieldset class="popup__fieldset">
                     <input 
                     class="popup__input popup__input_type_name" 
@@ -89,7 +89,7 @@
         <div class="popup__container">
             <h2 class="popup__name">Новое место</h2>
             <button type="button" class="popup__close-button"></button>
-            <form class="popup__form" novalidate>
+            <form class="popup__form" name="new-place" novalidate>
                 <fieldset class="popup__fieldset">
                     <input 
                     class="popup__input popup__input_type_name" 
@@ -127,7 +127,7 @@
         <div class="popup__container">
             <h2 class="popup__name">Обновить аватар</h2>
             <button type="button" class="popup__close-button"></button>
-            <form class="popup__form" novalidate>
+            <form class="popup__form" name="edit-avatar" novalidate>
                 <fieldset class="popup__fieldset">
                     <input 
                     class="popup__input popup__input_type_name popup__input_type_link" 
@@ -146,7 +146,7 @@
         <div class="popup__container">
             <h2 class="popup__name">Вы уверены?</h2>
             <button type="button" class="popup__close-button"></button>
-            <form class="popup__form" novalidate>
+            <form class="popup__form" name="delete" novalidate>
                 <button class="popup__save-button" type="submit">Да</button>
             </form>
         </div>

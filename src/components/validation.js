@@ -5,7 +5,7 @@ function showError(inputElement, errorMessage, invalidInputClass) {
     errorElement.textContent = errorMessage;
 }
 
-function hideError (inputElement, invalidInputClass) {
+function hideError(inputElement, invalidInputClass) {
     const spanId = 'error-' + inputElement.id;
     const errorElement = document.getElementById(spanId);
     inputElement.classList.remove(invalidInputClass);
@@ -38,14 +38,14 @@ function checkForm(form, buttonSubmit) {
 
 function setEventListeners(form, settings) {
     const inputElementList = form.querySelectorAll(settings.inputSelector);
-        const buttonSubmit = form.querySelector(settings.submitButtonSelector);
-        checkForm(form, buttonSubmit);
-        inputElementList.forEach(inputElement => {
-            inputElement.addEventListener('input', () => {
-                checkForm(form, buttonSubmit);
-                checkInput(inputElement, settings);
-            });
+    const buttonSubmit = form.querySelector(settings.submitButtonSelector);
+    checkForm(form, buttonSubmit);
+    inputElementList.forEach(inputElement => {
+        inputElement.addEventListener('input', () => {
+            checkForm(form, buttonSubmit);
+            checkInput(inputElement, settings);
         });
+    });
 }
 
 export function enableValidation(settings) {
@@ -53,8 +53,8 @@ export function enableValidation(settings) {
     formList.forEach(form => {
         form.addEventListener('submit', (evt) => {
             evt.preventDefault();
-            });
-            
-            setEventListeners(form, settings);
+        });
+
+        setEventListeners(form, settings);
     })
 }

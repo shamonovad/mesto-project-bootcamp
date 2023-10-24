@@ -1,4 +1,4 @@
-const popupList = document.querySelectorAll('.popup');
+import { popupList } from "./constants";
 
 export function openPopup(popup) {
     popup.classList.add("popup_opened");
@@ -17,14 +17,13 @@ export function closeByEsc(evt) {
     }
 }
 
-export function closeByOverlayClick(evt) {
-    
-    const openedPopup = evt.target.classList.contains('popup_opened');
-    if (openedPopup) {
-        closePopup(evt.target);
-    }
-}
-
-popupList.forEach((element) => {
-    element.addEventListener('mousedown', closeByOverlayClick);
+popupList.forEach((popup) => {
+    popup.addEventListener('mousedown', (evt) => {
+        if (evt.target.classList.contains('popup_opened')) {
+            closePopup(popup)
+        }
+        if (evt.target.classList.contains('popup__close-button')) {
+            closePopup(popup)
+        }
+    })
 });
