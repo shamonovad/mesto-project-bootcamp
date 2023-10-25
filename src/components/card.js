@@ -27,19 +27,19 @@ function handleDeleteCard(cardToDelete) {
 
 }
 
-function handleLikeButton(evt, likeNumber, card, cardId) {
+function handleLikeButton(evt, likeNumber, cardId) {
 
     if (!evt.target.classList.contains('element__like-button_active')) {
         addLike(cardId)
-            .then(() => {
-                likeNumber.textContent = card.likes.length + 1;
+            .then((card) => {
+                likeNumber.textContent = card.likes.length;
                 evt.target.classList.add("element__like-button_active");
             })
             .catch((err) => console.log(err.status, err.message));
 
     } else {
         deleteLike(cardId)
-            .then(() => {
+            .then((card) => {
                 likeNumber.textContent = card.likes.length;
                 evt.target.classList.remove("element__like-button_active");
             })
@@ -62,7 +62,7 @@ export function createItem(card, isMine, isLikedByMe) {
     likeNumber.textContent = card.likes.length;
 
     const likeButton = newItem.querySelector(".element__like-button");
-    likeButton.addEventListener("click", (evt) => handleLikeButton(evt, likeNumber, card, card._id));
+    likeButton.addEventListener("click", (evt) => handleLikeButton(evt, likeNumber, card._id));
 
     if (isLikedByMe) {
         likeButton.classList.add('element__like-button_active');
